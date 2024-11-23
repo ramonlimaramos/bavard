@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bavard TTS</title>
+    <link rel="stylesheet" href="{{ request.static_url('bavard_tts:static/css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Text to Speech</h1>
+        
+        <div class="model-upload">
+            <h2>Upload Model</h2>
+            <input type="file" id="model-file" accept=".pth">
+            <button onclick="uploadModel()">Upload Model</button>
+        </div>
+        
+        <div class="text-input">
+            <h2>Enter Text</h2>
+            <textarea id="input-text" rows="4" cols="50"></textarea>
+        </div>
+        
+        <button onclick="generateSpeech()">Generate Speech</button>
+        
+        <div id="audio-output" style="display: none;">
+            <h2>Generated Audio</h2>
+            <audio id="audio-player" controls></audio>
+            <a id="download-link" class="download-button">Download Audio</a>
+        </div>
+    </div>
+    
+    <script src="{{ request.static_url('bavard_tts:static/js/main.js') }}"></script>
+</body>
+</html> 
